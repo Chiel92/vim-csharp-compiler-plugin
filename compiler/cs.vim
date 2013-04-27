@@ -29,10 +29,10 @@ CompilerSet errorformat=
 
 if executable("msbuild")
     CompilerSet makeprg=msbuild\ /verbosity:minimal
-elseif executable("xbuild")
+else "if executable("xbuild")
     CompilerSet makeprg=xbuild\ /verbosity:minimal
-else
-    echoerr "msbuild or xbuild not found."
+"else
+"    echoerr "msbuild or xbuild not found."
 endif
 
 let &cpo = s:keepcpo
