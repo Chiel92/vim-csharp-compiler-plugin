@@ -1,12 +1,12 @@
 " Vim compiler file
-" Compiler:	Microsoft Visual Studio C# or else Mono C#
+" Compiler:	Microsoft Visual Studio C#
 " Maintainer:	Chiel ten Brinke (ctje92@gmail.com)
-" Last Change:	2013 Apr 26
+" Last Change:	2013 May 13
 
 if exists("current_compiler")
   finish
 endif
-let current_compiler = "cs"
+let current_compiler = "msbuild"
 let s:keepcpo= &cpo
 set cpo&vim
 
@@ -27,11 +27,7 @@ CompilerSet errorformat=
             \%-G%.%#Compilation%.%#,
             \%-G%.%#
 
-if executable("msbuild")
-    CompilerSet makeprg=msbuild\ /verbosity:minimal
-else
-    CompilerSet makeprg=xbuild\ /verbosity:minimal
-endif
+CompilerSet makeprg=msbuild\ /verbosity:minimal
 
 let &cpo = s:keepcpo
 unlet s:keepcpo
