@@ -7,14 +7,16 @@ if exists("current_compiler")
   finish
 endif
 
-" Almost the same as msbuild
-source "msbuild.vim"
-
 let current_compiler = "xbuild"
 let s:keepcpo= &cpo
 set cpo&vim
 
-CompilerSet makeprg=xbuild\ /verbosity:minimal
+if exists(":CompilerSet") != 2		" older Vim always used :setlocal
+  command -nargs=* CompilerSet setlocal <args>
+endif
+
+CompilerSet errorformat=\ %#%f(%l\\\,%c):\ %m
+CompilerSet makeprg=xbuild\ /nologo\ /v:q\ /property:GenerateFullPaths=true
 
 let &cpo = s:keepcpo
 unlet s:keepcpo
