@@ -6,4 +6,4 @@ There are two compilers supported.
 * `msbuild`, the Microsoft .NET compiler for building C# projects.
 * `xbuild`, the mono equivalent of `msbuild`.
 
-Load them in vim like `:compiler xbuild`.
+Install this plugin using your favorite plugin manager, then load the compiler plugin of your choice in vim like `:compiler xbuild`.
