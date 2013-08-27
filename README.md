@@ -1,3 +1,5 @@
+NOTE: this plugin is currently added to vim's source. It is not needed to install this manually, if you have an up-to-date vim version.
+
 vim-csharp-compiler-plugin
 ==========================
 
@@ -6,4 +8,4 @@ There are two compilers supported.
 * `msbuild`, the Microsoft .NET compiler for building C# projects.
 * `xbuild`, the mono equivalent of `msbuild`.
 
-Install this plugin using your favorite plugin manager, then load the compiler plugin of your choice in vim like `:compiler xbuild`.
+Load the compiler plugin of your choice in vim like `:compiler xbuild`.
